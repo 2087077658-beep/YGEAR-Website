@@ -3,3 +3,53 @@
 @media(max-width:760px){.topbar{height:66px;padding:0 5%}.brand-cn{font-size:22px}.nav,.nav-cta{display:none}.menu-button{display:block;margin-left:auto;border:0;background:transparent;font-size:23px}.mobile-nav:not([hidden]){display:flex;position:sticky;top:66px;z-index:19;background:var(--bg);flex-direction:column;border-bottom:1px solid var(--line);padding:10px 5%}.mobile-nav a{padding:12px 0;font-size:14px}.hero{grid-template-columns:1fr}.hero-copy{min-height:520px;padding:35px 6% 22px}.hero h1{margin:80px 0 25px;font-size:clamp(55px,12vw,88px)}.hero-art{border-left:0;border-top:1px solid var(--line);min-height:380px}.mouse-art{inset:0;width:100%;height:100%}.hero-bottom{padding-top:60px}.manifesto,.selector-section,.services,.notes{padding:65px 5% 75px}.manifesto-content{display:block;padding:65px 0}.manifesto h2,.services h2,.notes h2{font-size:clamp(43px,9vw,64px);margin:25px 0}.manifesto-desc{margin-top:30px}.principles{grid-template-columns:1fr}.principles>div,.principles>div+div{border-left:0;border-bottom:1px solid var(--line);padding:24px 0}.selector-header,.services-heading,.notes-content{display:block;padding:60px 0 30px}.selector-header h2{font-size:56px}.selector-header>p,.services-heading p{margin-top:25px}.selector-layout{grid-template-columns:1fr}.selector-form{padding:24px 16px}.result-panel{min-height:540px}.service-list>div{grid-template-columns:35px 1fr 20px;gap:12px}.service-list h3{font-size:21px}.service-list p{grid-column:2;grid-row:2;line-height:1.6}.service-arrow{grid-column:3;grid-row:1}.notes-text{margin-top:30px}.section-meta{font-size:9px}.option-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.grip-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.choice svg{height:45px}.choice{padding:12px 8px}.choice small{font-size:10px}}
 @media(max-width:390px){.brand-en{display:none}.hero h1{font-size:52px}.hero-actions{gap:18px}.grip-grid{gap:5px}.choice strong{font-size:13px}.choice small{font-size:9px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* 保留原有几何布局，增加页面切换与可读的报告层级。 */
+[hidden]{display:none!important}
+.paged{scroll-behavior:auto}
+.paged main>section{min-height:calc(100svh - 76px)}
+.nav a[aria-current="page"],.mobile-nav a[aria-current="page"]{text-decoration:underline;text-underline-offset:6px}
+.report-part{padding:20px 0;border-top:1px solid #555}
+.report-part h4{font-size:14px;font-weight:500;margin:0 0 12px;letter-spacing:.04em}
+.report-part p,.report-part li{font-size:14px;line-height:1.9;color:#ccc}
+.report-part ul{padding-left:20px;margin:0}
+.report-part li+li{margin-top:10px}
+.result-panel #resultStatus,.result-panel #copyStatus{font-size:13px;min-height:0;line-height:1.7;margin:16px 0}
+.result-tags{margin:14px 0 0}
+#resultTitle{scroll-margin-top:96px}
+#resultTitle:focus-visible{outline:2px solid #ddd;outline-offset:6px}
+#manualCopy label{display:block;font-size:13px;line-height:1.7;margin-bottom:8px}
+#reportText{width:100%;max-width:100%;padding:12px;background:#292929;color:#eee;border:1px solid #888;font:inherit;font-size:14px;line-height:1.7;resize:vertical}
+.service-list>div{grid-template-columns:10% 30% 1fr 64px}
+.service-status{font-size:12px;color:#777;border:1px solid #aaa;padding:5px;text-align:center;white-space:nowrap}
+@media(max-width:760px){
+ .paged main>section{min-height:calc(100svh - 66px)}
+ .manifesto,.selector-section,.services,.notes{padding:32px 5% 44px}
+ .selector-header,.services-heading,.notes-content{padding:30px 0 24px}
+ .selector-header h2{font-size:46px}
+ .manifesto-content{padding:30px 0}
+ .hero-copy{min-height:420px;padding-top:28px}
+ .hero h1{margin-top:45px}
+ .hero-art{min-height:260px}
+ .hero-bottom{padding-top:32px;font-size:10px;gap:12px}
+ .eyebrow{font-size:10px;letter-spacing:.06em;flex-wrap:wrap}
+ .hero-actions{gap:16px;flex-wrap:wrap}
+ .art-index,.art-corner{font-size:10px}
+ .section-meta{font-size:10px;gap:12px;flex-wrap:wrap}
+ .choice small{font-size:12px;line-height:1.6}
+ .choice strong{font-size:14px}
+ .choice.compact,.field-hint,.disclaimer,.selector-header>p,.services-heading p,.service-list p{font-size:13px}
+ .choice.compact{min-height:48px}
+ .selector-form fieldset{margin-bottom:22px;padding-bottom:22px}
+ .selector-form legend{font-size:16px}
+ .result-panel{min-height:0;padding:24px 20px}
+ .result-panel h3{font-size:28px}
+ .report-part{padding:16px 0}
+ #resultTitle{scroll-margin-top:84px}
+ .service-list>div{grid-template-columns:28px minmax(0,1fr) 64px;gap:10px}
+ .service-list h3{font-size:20px}
+ .service-status{grid-column:3;grid-row:1}
+ footer{padding-top:32px}
+ footer>p{margin-bottom:32px}
+ .mobile-nav a,.menu-button,.copy-btn,.solid-btn{min-height:44px}
+}
