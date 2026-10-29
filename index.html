@@ -8,6 +8,10 @@
   <title>异格 YGEAR — 不必同款，自有一格</title>
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
+  <script src="lab-rules.js" defer></script>
+  <script src="lab-view.js" defer></script>
+  <script src="lab-copy.js" defer></script>
+  <script src="lab.js" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -56,6 +60,21 @@
     <section class="selector-section" id="selector">
       <div class="section-meta"><span>02 / INTERACTIVE LAB</span><span>EXPERIMENTAL TOOL — V1</span></div>
       <div class="selector-header"><div><p class="kicker">YGEAR / FIT LAB</p><h2>找到你的<br>鼠标形态。</h2></div><p>用三个简单问题，获得一个初步的鼠标形态方向。<br>这是基于常见使用习惯的启发式建议，不是AI诊断或产品实测。</p></div>
+      <section class="feel-lab" aria-labelledby="lab-title">
+        <div class="lab-heading"><div><p class="kicker">FORM STUDY / 手感实验室</p><h3 id="lab-title">用线条，探索形态。</h3></div><p>调整手部参考参数，观察两种鼠标视图如何变化。没有测量数据时，也可以只把它当作一次形态实验。</p></div>
+        <p class="lab-notice">探索性可视化 · 鼠标线稿使用相对绘图比例，不对应真实产品尺寸，也不是经过科学验证的最优鼠标模具。这里没有适配分数或实测结论。</p>
+        <div class="lab-layout"><div class="lab-controls">
+          <div class="lab-field"><label for="lab-length">手长<output id="lab-length-value" for="lab-length">18cm</output></label><input id="lab-length" type="range" min="14" max="23" step="0.1" value="18" aria-describedby="lab-length-hint"><p id="lab-length-hint">手腕横纹至中指尖</p></div><div class="lab-field"><label for="lab-width">掌宽<output id="lab-width-value" for="lab-width">8.5cm</output></label><input id="lab-width" type="range" min="6" max="12" step="0.1" value="8.5" aria-describedby="lab-width-hint"><p id="lab-width-hint">四指并拢，掌部最宽处，不含拇指</p></div><div class="lab-field"><label for="lab-fingers">手指长度倾向<output id="lab-fingers-value" for="lab-fingers">50</output></label><input id="lab-fingers" type="range" min="0" max="100" step="1" value="50" aria-describedby="lab-fingers-hint"><p id="lab-fingers-hint">相对掌部：偏短 → 偏长</p></div><div class="lab-field"><label for="lab-thumb">拇指张角<output id="lab-thumb-value" for="lab-thumb">40°</output></label><input id="lab-thumb" type="range" min="15" max="70" step="1" value="40" aria-describedby="lab-thumb-hint"><p id="lab-thumb-hint">相对手掌纵轴的示意角度</p></div>
+          <div class="lab-field"><label for="lab-grip">握法</label><select id="lab-grip"><option value="palm">趴握 / 掌心贴合</option><option value="claw">抓握 / 掌根支撑</option><option value="fingertip">指握 / 指尖控制</option></select></div>
+          <button type="button" id="lab-reset" class="lab-reset">重置探索参数 ↺</button>
+        </div><div class="lab-drawings">
+          <figure class="lab-hand-figure"><figcaption>01 / 手型结构 <span>掌侧示意</span></figcaption><svg id="lab-hand" viewBox="0 0 360 410" aria-labelledby="lab-hand-title lab-hand-desc"><title id="lab-hand-title">可调节的手型线稿</title><desc id="lab-hand-desc">圆形控制点可拖动；也可使用旁边的滑块调整参数。线稿是抽象结构，并非医学解剖模型。</desc><g id="lab-hand-lines"></g><g><circle class="lab-handle" data-lab-handle="length" r="9" tabindex="0" role="slider" aria-label="拖动调整手长" aria-describedby="lab-drag-hint"><title>手长：拖动或使用方向键</title></circle><circle class="lab-handle" data-lab-handle="width" r="9" tabindex="0" role="slider" aria-label="拖动调整掌宽" aria-describedby="lab-drag-hint"><title>掌宽：拖动或使用方向键</title></circle><circle class="lab-handle" data-lab-handle="fingers" r="9" tabindex="0" role="slider" aria-label="拖动调整手指长度倾向" aria-describedby="lab-drag-hint"><title>手指长度倾向：拖动或使用方向键</title></circle><circle class="lab-handle" data-lab-handle="thumb" r="9" tabindex="0" role="slider" aria-label="拖动调整拇指张角" aria-describedby="lab-drag-hint"><title>拇指张角：拖动或使用方向键</title></circle></g></svg></figure>
+          <div class="lab-mouse-views"><figure><figcaption>02 / 鼠标俯视 <span>前端 ↑</span></figcaption><svg viewBox="0 0 340 330" role="img" aria-label="随手部参数联动的鼠标俯视轮廓"><g id="lab-top-lines"></g></svg></figure><figure><figcaption>03 / 鼠标侧视 <span>前端 ← / → 尾部</span></figcaption><svg viewBox="0 110 340 125" role="img" aria-label="展示背高和背峰位置的鼠标侧视轮廓"><g id="lab-side-lines"></g></svg></figure></div>
+          <p id="lab-drag-hint" class="lab-drag-hint">○ 拖动中指尖、掌侧、食指尖或拇指点；键盘聚焦控制点后可用方向键微调，Home / End 跳到边界。手机也可直接用滑块。</p>
+        </div></div>
+        <div class="lab-explanation" id="lab-explanation" aria-label="形态变化与试握提示"></div>
+      </section>
+      <h3 class="lab-questionnaire-title">基础选型问卷</h3>
       <div class="selector-layout">
         <div class="selector-form">
           <fieldset><legend><span>01</span> 你的主要握法是？</legend><div class="option-grid grip-grid" data-group="grip">

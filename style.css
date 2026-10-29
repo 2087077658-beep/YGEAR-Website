@@ -53,3 +53,48 @@
  footer>p{margin-bottom:32px}
  .mobile-nav a,.menu-button,.copy-btn,.solid-btn{min-height:44px}
 }
+
+/* 参数线稿实验室：延续黑白灰、细线与几何留白。 */
+.feel-lab{border:1px solid #c9c9c6;background:var(--bg);margin-bottom:48px;padding:32px}
+.lab-heading{display:flex;align-items:end;justify-content:space-between;gap:32px}
+.lab-heading h3{font-size:32px;font-weight:450;letter-spacing:-.04em;margin:0 0 20px}
+.lab-heading>p{max-width:390px;color:#666;font-size:14px;line-height:1.9}
+.lab-notice{font-size:13px;line-height:1.9;border-top:1px solid var(--line);padding-top:18px;color:#666}
+.lab-layout{display:grid;grid-template-columns:minmax(210px,.7fr) minmax(0,1.6fr);gap:40px;margin-top:28px}
+.lab-field{margin-bottom:24px}
+.lab-field label{display:flex;justify-content:space-between;gap:16px;font-size:14px;margin-bottom:12px}
+.lab-field output{font-variant-numeric:tabular-nums;color:#666}
+.lab-field input{display:block;width:100%;min-height:32px;accent-color:#333;cursor:pointer;margin:0}
+.lab-field p{font-size:12px;color:#777;line-height:1.7;margin:4px 0 0}
+.lab-field select{width:100%;padding:12px;border:1px solid #aaa;background:transparent;color:var(--ink);font:inherit;font-size:14px;border-radius:0}
+.lab-reset{background:transparent;border:1px solid #aaa;min-height:44px;padding:10px 16px;font-size:13px;color:var(--ink)}
+.lab-drawings{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:20px}
+.lab-drawings figure{margin:0;min-width:0}
+.lab-drawings figcaption{border-bottom:1px solid var(--line);padding-bottom:12px;font-size:12px;line-height:1.8}
+.lab-drawings figcaption span{display:block;font-size:11px;color:#777}
+.lab-drawings svg{width:100%;height:auto;display:block;overflow:visible}
+.lab-mouse-views{min-width:0}
+.lab-mouse-views figure+figure{margin-top:8px}
+.lab-outline,.lab-contour,.lab-joint,.lab-guide{fill:none;stroke:#303030;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.lab-contour{stroke:#999;stroke-width:.65}
+.lab-joint{stroke:#777;stroke-width:.8}
+.lab-guide{stroke:#bbb;stroke-width:.65;stroke-dasharray:4 6}
+.lab-handle{fill:var(--bg);stroke:#222;stroke-width:1.2;cursor:grab;touch-action:none;vector-effect:non-scaling-stroke}
+.lab-handle:active{cursor:grabbing;fill:#bbb}
+.lab-handle:focus-visible{outline:none;stroke:#000;stroke-width:3;fill:#ccc}
+.lab-drag-hint{grid-column:1/-1;font-size:12px;color:#777;line-height:1.8;margin:0}
+.lab-explanation{display:grid;grid-template-columns:1fr 1fr;gap:12px 32px;border-top:1px solid var(--line);margin-top:28px;padding-top:22px}
+.lab-explanation p{font-size:13px;line-height:1.9;color:#666;margin:0}
+.lab-questionnaire-title{font-size:24px;font-weight:450;margin-bottom:24px}
+.lab-field input:focus-visible,.lab-field select:focus-visible,.lab-reset:focus-visible{outline:2px solid #555;outline-offset:4px}
+@media(max-width:1050px){.lab-layout{grid-template-columns:minmax(180px,.7fr) minmax(0,1fr);gap:24px}.feel-lab{padding:24px}}
+@media(max-width:760px){
+ .feel-lab{padding:20px 16px;margin-bottom:32px}
+ .lab-heading{display:block}.lab-heading h3{font-size:28px}.lab-heading>p{max-width:none}
+ .lab-layout{grid-template-columns:minmax(0,1fr);gap:24px}
+ .lab-controls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 20px}
+ .lab-field{min-width:0;margin-bottom:18px}.lab-field label{font-size:13px;gap:6px;flex-wrap:wrap}.lab-field p{font-size:12px}
+ .lab-reset{align-self:center}.lab-explanation{grid-template-columns:1fr;gap:14px}
+ .lab-drawings{gap:12px}.lab-handle{r:11px}.lab-drawings figcaption{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){.lab-drawings *{scroll-behavior:auto}}
